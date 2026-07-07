@@ -1,0 +1,86 @@
+@charset "utf-8";
+
+/*
+    Gus & Luz Home Stylesheet
+    Author: Jose Sanchez
+    Date: 2/11/2026
+
+    Filename: gl_styles1.css
+    Shared rules (reset, nav, logo, footer, language toggle, animations)
+    live in gl_base.css — this file only holds home-page-specific styling.
+*/
+
+/* Font Styles */
+.bodoni-moda {
+    font-family: var(--font-serif);
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.inter-regular {
+    font-family: var(--font-sans);
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* Logo — larger and closer to the hero image on the home page only */
+.logo {
+    margin-bottom: 8px;
+}
+
+.logo img {
+    max-width: 72%;
+}
+
+/* Picture Styles */
+.main-img {
+    opacity: 0;
+    transform: translateY(40px);
+    animation: slideIn 1.1s ease forwards;
+    display: block;
+    margin-top: 14px;
+    margin-bottom: 46px;
+}
+
+.intro-img {
+    width: 90%;
+    display: block;
+    margin: 0 auto;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-soft);
+}
+
+/* Date / Save the Date Styles */
+.date {
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
+    justify-self: center;
+}
+
+.kicker {
+    margin: 0 0 6px;
+    font-family: var(--font-sans);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--color-ink-soft);
+}
+
+.date h2 {
+    margin: 0;
+    font-weight: 500;
+    font-size: 1.5rem;
+    letter-spacing: 0.01em;
+}
+
+.ornament {
+    display: block;
+    margin-top: 22px;
+    margin-bottom: 50px;
+    color: var(--color-accent-deep);
+    font-size: 1.1rem;
+}

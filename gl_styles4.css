@@ -1,0 +1,123 @@
+@charset "utf-8";
+
+/*
+    Gus & Luz Registry Stylesheet
+    Author: Jose Sanchez
+    Date: 2/11/2026
+
+    Filename: gl_styles4.css
+    Shared rules (reset, nav, logo, footer, language toggle, animations)
+    live in gl_base.css — this file only holds registry-page-specific styling.
+*/
+
+/* Font Styles */
+.corinthia-regular {
+    font-family: var(--font-script);
+    font-weight: 400;
+    font-style: normal;
+}
+
+.corinthia-bold {
+    font-family: var(--font-script);
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* Fade-in Animation on Scroll (kept local so this file also works standalone) */
+.fade-in {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.fade-in.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Slide-in groupings specific to this page */
+.intro {
+    opacity: 0;
+    transform: translateX(40px);
+    animation: slideIn 1.1s ease forwards;
+}
+
+.title {
+    opacity: 0;
+    transform: translateX(-40px);
+    animation: slideIn 1.1s ease forwards;
+}
+
+/* Title Styles */
+.title {
+    text-align: center;
+    padding: 0 10px;
+}
+
+.title h1 {
+    font-size: 1.9rem;
+}
+
+/* Intro Styles */
+.intro {
+    text-align: center;
+    padding: 0 2rem;
+    line-height: 1.8rem;
+}
+
+.intro h2 {
+    font-size: 1.25rem;
+    margin-top: 0;
+    font-weight: 500;
+}
+
+.intro p {
+    font-size: 1.05rem;
+}
+
+/* Zola Logo Styles */
+.zola-logo {
+    margin: 50px 40px 0;
+    padding-top: 34px;
+    border-top: 1px solid var(--color-accent-active);
+}
+
+.zola-img {
+    width: 100%;
+}
+
+/* Button Styles */
+.button {
+    text-align: center;
+    margin: 44px 0;
+}
+
+.btn {
+    font-size: 1.2rem;
+    padding: 15px 28px;
+}
+
+.button p {
+    font-size: 0.82rem;
+    line-height: 1.4rem;
+    margin: 26px 40px 0;
+    color: var(--color-ink-soft);
+}
+
+/* Thank You Styles */
+.thanks {
+    text-align: center;
+    margin: 0 40px 10px;
+    padding-top: 34px;
+    border-top: 1px solid var(--color-accent-active);
+}
+
+.thanks h3 {
+    font-size: 1.9rem;
+    margin-bottom: 0.6rem;
+    font-weight: 500;
+}
+
+.thanks p {
+    font-size: 1.05rem;
+}

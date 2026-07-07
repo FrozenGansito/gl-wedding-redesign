@@ -1,0 +1,108 @@
+@charset "utf-8";
+
+/*
+    Gus & Luz Hotel & Travel Stylesheet
+    Author: Jose Sanchez
+    Date: 2/11/2026
+
+    Filename: gl_styles5.css
+    Shared rules (reset, nav, logo, footer, language toggle, animations)
+    live in gl_base.css — this file only holds hotel-page-specific styling.
+*/
+
+/* Font Styles */
+.corinthia-regular {
+    font-family: var(--font-script);
+    font-weight: 400;
+    font-style: normal;
+}
+
+.corinthia-bold {
+    font-family: var(--font-script);
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* Slide-in groupings specific to this page */
+.intro {
+    opacity: 0;
+    transform: translateX(40px);
+    animation: slideIn 1.1s ease forwards;
+}
+
+.title, .sub-title {
+    opacity: 0;
+    transform: translateX(-40px);
+    animation: slideIn 1.1s ease forwards;
+}
+
+.marriott {
+    opacity: 0;
+    transform: translateY(40px);
+    animation: slideIn 1.1s ease forwards;
+}
+
+img {
+    display: block;
+}
+
+/* Main Styles */
+.main {
+    width: 88%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Title Styles */
+.title {
+    text-align: center;
+    padding: 0 10px;
+}
+
+.title h1 {
+    font-size: 1.9rem;
+}
+
+.intro {
+    font-size: 1.05rem;
+    line-height: 1.8rem;
+    color: var(--color-ink-soft);
+}
+
+/* Hotel Cards */
+.sub-title {
+    font-size: 1.35rem;
+    font-weight: 500;
+    margin: 34px 0 22px;
+}
+
+.marriott, .avid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    padding: 20px;
+    margin-bottom: 26px;
+    background-color: var(--color-surface);
+    border: var(--card-border);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-soft);
+}
+
+.marriott h3, .avid h3 {
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin: 0;
+}
+
+.hotel1, .hotel2 {
+    width: 100%;
+    border-radius: var(--radius-sm);
+}
+
+.add-info {
+    font-size: 1.05rem;
+    line-height: 1.7rem;
+    color: var(--color-ink-soft);
+    padding-bottom: 20px;
+}

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--
+        Gus & Luz Wedding Gallery Page (Mobile Only)
+
+        Author: Jose Sanchez
+        Date: 2/15/2026
+
+        Filename: gallery.html
+    -->
+
+    <title>Gus & Luzmeri Wedding</title>
+    <meta name="robots" content="noindex, nofollow">
+    <meta charset="utf-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Corinthia:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="gl_base.css">
+    <link rel="stylesheet" href="gl_styles6.css">
+    <script src="gallery-feature.js" defer></script>
+    <script src="language-toggle.js" defer></script>
+    <script src="fade-in.js" defer></script>
+
+</head>
+
+<body>
+    <div class="mobile-wrapper">
+
+        <div class="language-toggle">
+            <div class="english">
+                <button data-lang="en" onclick="setLanguage('en')">English</button>
+            </div>
+            <div class="spanish">
+                <button data-lang="es" onclick="setLanguage('es')">Español</button>
+            </div>
+        </div>
+
+        <section class="logo">
+            <img src="gallery/logo.png" alt="Logo">
+        </section>
+
+        <header>
+            <nav class="navigation">
+                <ul>
+                    <li><a href="index.html">
+                        <span class="en">Home</span>
+                        <span class="es">Inicio</span>
+                    </a></li>
+                    <li><a href="details.html">
+                        <span class="en">Details</span>
+                        <span class="es">Detalles</span>
+                    </a></li>
+                    <li><a href="rsvp.html">
+                        <span class="en">RSVP</span>
+                        <span class="es">RSVP</span>
+                    </a></li>
+                    <li><a href="registry.html">
+                        <span class="en">Registry</span>
+                        <span class="es">Registro</span>
+                    </a></li>
+                    <li><a href="gallery.html" aria-current="page">
+                        <span class="en">Gallery</span>
+                        <span class="es">Galería</span>
+                    </a></li>
+                    <li><a href="hotel.html">
+                        <span class="en">Hotel & Travel</span>
+                        <span class="es">Hospedaje</span>
+                    </a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <section class="title">
+            <h1>
+                <span class="en">Gallery</span>
+                <span class="es">Galería</span>
+            </h1>
+        </section>
+
+        <section class="intro">
+            <p>
+                <span class="en">
+                    Before we begin our forever, we wanted to capture the love that
+                    brought us here, the quiet moments, the laughter, and the feeling 
+                    of knowing we found our home in each other.
+                </span>
+                <span class="es">
+                    Antes de comenzar nuestro para siempre, queríamos capturar el amor 
+                    que nos trajo hasta aquí, los momentos tranquilos, las risas y la 
+                    sensación de saber que encontramos nuestro hogar el uno en el otro.
+                </span>
+            </p>
+        </section>
+
+        <section class="image-grid">
+            <img src="gallery/thumbs/IMG1.jpg" data-full="gallery/full/IMG1.jpg" alt="image" data-index="0" class="fade-in" loading="lazy">
+            <img src="gallery/thumbs/IMG2.jpg" data-full="gallery/full/IMG2.jpg" alt="image" data-index="1" class="fade-in" loading="lazy">
+            <img src="gallery/thumbs/IMG3.jpg" data-full="gallery/full/IMG3.jpg" alt="image" data-index="2" class="fade-in" loading="lazy">
+            <img src="gallery/thumbs/IMG4.jpg" data-full="gallery/full/IMG4.jpg" alt="image" data-index="3" class="fade-in" loading="lazy">
+            <img src="gallery/thumbs/IMG5.jpg" data-full="gallery/full/IMG5.jpg" alt="image" data-index="4" class="fade-in" loading="lazy">
+            <img src="gallery/thumbs/IMG6.jpg" data-full="gallery/full/IMG6.jpg" alt="image" data-index="5" class="fade-in" loading="lazy">
+            <img src="gallery/thumbs/IMG7.jpg" data-full="gallery/full/IMG7.jpg" alt="image" data-index="6" class="fade-in" loading="lazy">
+            <img src="gallery/thumbs/IMG8.jpg" data-full="gallery/full/IMG8.jpg" alt="image" data-index="7" class="fade-in" loading="lazy">
+            <img src="gallery/thumbs/IMG9.jpg" data-full="gallery/full/IMG9.jpg" alt="image" data-index="8" class="fade-in" loading="lazy">
+            <img src="gallery/thumbs/IMG10.jpg" data-full="gallery/full/IMG10.jpg" alt="image" data-index="9" class="fade-in" loading="lazy">
+            <img src="gallery/thumbs/IMG11.jpg" data-full="gallery/full/IMG11.jpg" alt="image" data-index="10" class="fade-in" loading="lazy">
+            <img src="gallery/thumbs/IMG12.jpg" data-full="gallery/full/IMG12.jpg" alt="image" data-index="11" class="fade-in" loading="lazy">
+            <img src="gallery/thumbs/IMG13.jpg" data-full="gallery/full/IMG13.jpg" alt="image" data-index="12" class="fade-in" loading="lazy">
+            <img src="gallery/thumbs/IMG14.jpg" data-full="gallery/full/IMG14.jpg" alt="image" data-index="13" class="fade-in" loading="lazy">
+        </section>
+
+        <footer>
+            Website created by Jose Sanchez
+        </footer>
+
+        <div id="lightbox">
+            <button id="lb-close" aria-label="Close">&#x2715;</button>
+            <button id="lb-prev" class="lb-arrow" aria-label="Previous">&lsaquo;</button>
+            <img id="lb-img" src="" alt="" />
+            <button id="lb-next" class="lb-arrow" aria-label="Next">&rsaquo;</button>
+            <div id="lb-counter"></div>
+        </div>
+
+    </div>
+</body>
+</html>
