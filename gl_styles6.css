@@ -98,15 +98,28 @@
     inset: 0;
     background: rgba(10, 16, 22, 0.9);
     z-index: 1000;
+    flex-direction: column;
+}
+
+#lightbox.active {
+    display: flex;
+}
+
+/* Stage: the image gets whatever space is left after the controls row
+   below claims its height, so the two areas can never overlap. */
+.lb-stage {
+    flex: 1 1 auto;
+    min-height: 0;
+    display: flex;
     align-items: center;
     justify-content: center;
+    padding: 16px;
+    overflow: hidden;
 }
 
 #lightbox img {
-    position: relative;
-    top: -5%;
-    max-width: 95vw;
-    max-height: 85vh;
+    max-width: 100%;
+    max-height: 100%;
     object-fit: contain;
     border-radius: var(--radius-sm);
     user-select: none;
@@ -114,10 +127,6 @@
     touch-action: none;
     transform-origin: center center;
     will-change: transform;
-}
-
-#lightbox.active {
-    display: flex;
 }
 
 /* Lightbox Close Button */
@@ -139,42 +148,41 @@
     justify-content: center;
 }
 
+/* Controls row: reserves its own height below the stage, so the
+   arrows/counter never sit on top of the image in any browser. */
+.lb-controls {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    padding: 8px 16px calc(16px + env(safe-area-inset-bottom, 0px));
+}
+
 /* Arrow Buttons */
 .lb-arrow {
-    position: absolute;
-    top: auto;
-    bottom: calc(50px + 2.5vh);
-    left: 50%;
     z-index: 2;
     font-size: 3rem;
     color: #fff;
     background: rgba(211, 211, 211, 0.35);
     border: none;
     border-radius: 6px;
-    width: 140px;
-    height: 81px;
+    width: 70px;
+    height: 60px;
     padding: 0;
     line-height: 1;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-#lb-prev {
-    transform: translate(calc(-50% - 85px), 0);
-}
-
-#lb-next {
-    transform: translate(calc(-50% + 85px), 0);
+    flex: 0 0 auto;
 }
 
 /* Image Counter */
 #lb-counter {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
+    flex: 0 0 auto;
+    min-width: 60px;
+    text-align: center;
     color: rgba(255, 255, 255, 0.7);
     font-size: 0.85rem;
     letter-spacing: 0.05em;

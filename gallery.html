@@ -118,10 +118,14 @@
 
         <div id="lightbox">
             <button id="lb-close" aria-label="Close">&#x2715;</button>
-            <button id="lb-prev" class="lb-arrow" aria-label="Previous">&lsaquo;</button>
-            <img id="lb-img" src="" alt="" />
-            <button id="lb-next" class="lb-arrow" aria-label="Next">&rsaquo;</button>
-            <div id="lb-counter"></div>
+            <div class="lb-stage">
+                <img id="lb-img" src="" alt="" />
+            </div>
+            <div class="lb-controls">
+                <button id="lb-prev" class="lb-arrow" aria-label="Previous">&lsaquo;</button>
+                <div id="lb-counter"></div>
+                <button id="lb-next" class="lb-arrow" aria-label="Next">&rsaquo;</button>
+            </div>
         </div>
 
     </div>
