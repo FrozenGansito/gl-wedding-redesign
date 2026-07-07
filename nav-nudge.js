@@ -5,9 +5,10 @@ document.addEventListener('DOMContentLoaded', () => {
   if (nav.scrollWidth <= nav.clientWidth) return; // nothing to scroll
 
   setTimeout(() => {
-    nav.scrollTo({ left: 40, behavior: 'smooth' });
+    const maxScroll = nav.scrollWidth - nav.clientWidth;
+    nav.scrollTo({ left: maxScroll, behavior: 'smooth' });
     setTimeout(() => {
       nav.scrollTo({ left: 0, behavior: 'smooth' });
-    }, 450);
+    }, 650);
   }, 1400);
 });
