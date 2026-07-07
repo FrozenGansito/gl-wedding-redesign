@@ -4,3 +4,6 @@ gallery/IMG*.JPG
 # OS junk
 Thumbs.db
 .DS_Store
+
+# Claude Code local state
+.claude/
