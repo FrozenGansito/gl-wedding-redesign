@@ -211,11 +211,11 @@ header {
 .navigation a {
     text-decoration: none;
     display: block;
-    padding: 11px 18px;
+    padding: 13px 21px;
     color: var(--color-ink);
     font-family: var(--font-sans);
     font-weight: 500;
-    font-size: 1rem;
+    font-size: 1.15rem;
     letter-spacing: 0.01em;
     white-space: nowrap;
     background-color: rgba(169, 216, 242, 0.35);
@@ -238,8 +238,8 @@ header {
 
 @media (max-width: 400px) {
     .navigation a {
-        font-size: 0.92rem;
-        padding: 10px 15px;
+        font-size: 1.05rem;
+        padding: 12px 17px;
     }
 }
 
