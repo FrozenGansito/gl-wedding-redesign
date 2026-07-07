@@ -97,6 +97,8 @@ function resetZoom() {
 }
 
 lightbox.addEventListener('touchstart', (e) => {
+  if (e.target !== lbImg) return; // ignore touches on buttons/controls
+
   if (e.touches.length === 2) {
     isPinching = true;
     startDistance = getDistance(e.touches);
