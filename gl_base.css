@@ -1,0 +1,310 @@
+@charset "utf-8";
+
+/*
+    Gus & Luz Wedding — Shared Base Stylesheet
+    Author: Jose Sanchez
+
+    Filename: gl_base.css
+
+    Shared design tokens + components (logo, nav, language toggle,
+    footer, buttons, section titles) used by every page. Page-specific
+    stylesheets (gl_styles1-6.css) hold only the rules unique to that page.
+*/
+
+:root {
+    /* Colors (unchanged from the original palette) */
+    --color-page-bg: #e5f3fc;
+    --color-surface: #ffffff;
+    --color-surface-tint: #f4faff;
+    --color-accent: #e5f3fc;
+    --color-accent-active: #cfedff;
+    --color-accent-deep: #a9d8f2;
+    --color-ink: #1a1a1a;
+    --color-ink-soft: #57636c;
+    --shadow-soft: 0 10px 30px rgba(31, 84, 122, 0.10);
+    --shadow-btn: 0 6px 16px rgba(31, 84, 122, 0.16);
+    --shadow-inset: inset -2px -2px 6px var(--color-accent-deep),
+        inset 2px 2px 6px #ffffff;
+    --card-border: none;
+
+    /* Type */
+    --font-serif: "Bodoni Moda", serif;
+    --font-sans: "Inter", sans-serif;
+    --font-script: "Corinthia", cursive;
+
+    /* Shape */
+    --radius-sm: 10px;
+    --radius-md: 16px;
+    --radius-lg: 22px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    background-color: var(--color-page-bg);
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    font-family: var(--font-sans);
+    color: var(--color-ink);
+}
+
+.mobile-wrapper {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    min-width: 320px;
+    width: 100%;
+    margin: 0 auto;
+    background: linear-gradient(to bottom, var(--color-page-bg) 0%, var(--color-surface) 50%);
+    min-height: 100vh;
+    overflow-x: hidden;
+    font-family: var(--font-sans);
+}
+
+h1, h2, h3 {
+    font-family: var(--font-serif);
+    font-weight: 500;
+    color: var(--color-ink);
+}
+
+p {
+    color: var(--color-ink-soft);
+}
+
+/* Fade-in Animation on Scroll */
+.fade-in {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.fade-in.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Slide-in Animation */
+.english,
+.spanish,
+.logo,
+.navigation {
+    opacity: 0;
+    animation: slideIn 1.1s ease forwards;
+}
+
+.english { transform: translateX(-40px); }
+.spanish { transform: translateX(40px); }
+.logo { transform: translateY(-30px); }
+.navigation { transform: translateY(40px); }
+
+@keyframes slideIn {
+    to {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+}
+
+/* Language Toggle — segmented pill switch */
+.es {
+    display: none;
+}
+
+.language-toggle {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    margin: 14px auto 0;
+    padding: 4px;
+    width: fit-content;
+    background-color: var(--color-accent-active);
+    border-radius: 999px;
+}
+
+.language-toggle button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    letter-spacing: 0.03em;
+    color: var(--color-ink-soft);
+    padding: 7px 16px;
+    border-radius: 999px;
+    transition: background-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.language-toggle .active {
+    background-color: var(--color-surface);
+    color: var(--color-ink);
+    font-weight: 600;
+    box-shadow: 0 2px 6px rgba(31, 84, 122, 0.15);
+}
+
+/* Logo */
+.logo {
+    max-width: 100%;
+    margin: 0 0 28px;
+    padding: 0;
+}
+
+.logo img {
+    display: block;
+    max-width: 55%;
+    margin: 22px auto 0;
+    filter: drop-shadow(0 6px 14px rgba(31, 84, 122, 0.12));
+}
+
+/* Navigation — fixed, translucent bottom bar. Swipe the row to see more. */
+header {
+    position: fixed;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 500px;
+    z-index: 100;
+    background-color: rgba(255, 255, 255, 0.55);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-top: 1px solid rgba(255, 255, 255, 0.7);
+    box-shadow: 0 -8px 24px rgba(31, 84, 122, 0.10);
+    padding: 16px 0 calc(16px + env(safe-area-inset-bottom, 0px));
+}
+
+.navigation {
+    max-width: 100%;
+    margin: 0;
+}
+
+.navigation ul {
+    display: flex;
+    flex-wrap: nowrap;
+    list-style: none;
+    margin: 0;
+    padding: 0 14px;
+    gap: 8px;
+    overflow-x: auto;
+    scroll-snap-type: x proximity;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+}
+
+.navigation ul::-webkit-scrollbar {
+    display: none;
+}
+
+.navigation li {
+    flex: 0 0 auto;
+    scroll-snap-align: center;
+}
+
+.navigation a {
+    text-decoration: none;
+    display: block;
+    padding: 12px 19.5px;
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-weight: 500;
+    font-size: 1.075rem;
+    letter-spacing: 0.01em;
+    white-space: nowrap;
+    background-color: rgba(169, 216, 242, 0.35);
+    border: none;
+    border-radius: 999px;
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.navigation a:active {
+    background-color: rgba(255, 255, 255, 0.9);
+    transform: scale(0.97);
+}
+
+.navigation a[aria-current="page"] {
+    background-color: var(--color-accent-deep);
+    border-color: var(--color-accent-deep);
+    color: var(--color-ink);
+    font-weight: 600;
+}
+
+@media (max-width: 400px) {
+    .navigation a {
+        font-size: 0.985rem;
+        padding: 11px 16px;
+    }
+}
+
+/* Section title divider — used under h1 inside a .title wrapper */
+.title h1 {
+    margin-bottom: 0;
+    text-decoration: none;
+}
+
+.title h1::after {
+    content: "";
+    display: block;
+    width: 44px;
+    height: 2px;
+    margin: 14px auto 0;
+    background-color: var(--color-accent-deep);
+    border-radius: 2px;
+}
+
+/* Buttons — shared by a.button (details/hotel) and a.btn (registry).
+   Scoped to anchors only: registry.html also has a plain wrapping
+   <div class="button"> that must not pick up pill/card styling. */
+a.button,
+a.btn {
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-weight: 600;
+    font-size: 1.05rem;
+    letter-spacing: 0.01em;
+    background-color: var(--color-accent-active);
+    box-shadow: var(--shadow-inset), var(--shadow-btn);
+    border-radius: 999px;
+    padding: 13px 26px;
+    transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+a.button:active,
+a.btn:active {
+    background-color: var(--color-accent-deep);
+    transform: translateY(1px) scale(0.98);
+    box-shadow: var(--shadow-inset);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        transform: none !important;
+    }
+}
+
+/* Footer — its own bottom padding clears the fixed nav bar so the
+   footer's background runs flush down to it instead of floating above it. */
+footer {
+    text-align: center;
+    background-color: var(--color-accent);
+    padding: 18px 0 calc(18px + 78px);
+    margin-top: auto;
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    letter-spacing: 0.02em;
+    color: var(--color-ink-soft);
+    border-radius: 26px 26px 0 0;
+}

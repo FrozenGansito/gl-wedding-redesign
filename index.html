@@ -28,9 +28,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="gl_base.css">
     <link rel="stylesheet" href="gl_styles1.css">
     <script src="language-toggle.js" defer></script>
     <script src="fade-in.js"defer></script>
+    <script src="nav-nudge.js" defer></script>
 
 </head>
 
@@ -53,7 +55,7 @@
         <header>
             <nav class="navigation">
                 <ul>
-                    <li><a href="index.html">
+                    <li><a href="index.html" aria-current="page">
                         <span class="en">Home</span>
                         <span class="es">Inicio</span>
                     </a></li>
@@ -82,15 +84,20 @@
         </header>
 
         <div class="main-img">
-            <img src="gallery/IMG8.JPG" alt="image" class="intro-img">
+            <img src="gallery/full/IMG8.jpg" alt="image" class="intro-img">
         </div>
 
         <div class="fade-in">
             <div class="date">
+                <p class="kicker">
+                    <span class="en">Save the Date</span>
+                    <span class="es">Reserva la Fecha</span>
+                </p>
                 <h2>
                     <span class="en">September 4, 2026</span>
                     <span class="es">4 de Septiembre del 2026</span>
                 </h2>
+                <span class="ornament">&#10022;</span>
             </div>
         </div>
 

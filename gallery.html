@@ -18,10 +18,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Corinthia:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="gl_base.css">
     <link rel="stylesheet" href="gl_styles6.css">
     <script src="gallery-feature.js" defer></script>
     <script src="language-toggle.js" defer></script>
     <script src="fade-in.js" defer></script>
+    <script src="nav-nudge.js" defer></script>
 
 </head>
 
@@ -60,7 +62,7 @@
                         <span class="en">Registry</span>
                         <span class="es">Registro</span>
                     </a></li>
-                    <li><a href="gallery.html">
+                    <li><a href="gallery.html" aria-current="page">
                         <span class="en">Gallery</span>
                         <span class="es">Galería</span>
                     </a></li>
@@ -95,20 +97,20 @@
         </section>
 
         <section class="image-grid">
-            <img src="gallery/IMG1.JPG" alt="image" data-index="0" class="fade-in">
-            <img src="gallery/IMG2.JPG" alt="image" data-index="1" class="fade-in">
-            <img src="gallery/IMG3.JPG" alt="image" data-index="2" class="fade-in">
-            <img src="gallery/IMG4.JPG" alt="image" data-index="3" class="fade-in">
-            <img src="gallery/IMG5.JPG" alt="image" data-index="4" class="fade-in">
-            <img src="gallery/IMG6.JPG" alt="image" data-index="5" class="fade-in">
-            <img src="gallery/IMG7.JPG" alt="image" data-index="6" class="fade-in">
-            <img src="gallery/IMG8.JPG" alt="image" data-index="7" class="fade-in">
-            <img src="gallery/IMG9.JPG" alt="image" data-index="8" class="fade-in">
-            <img src="gallery/IMG10.JPG" alt="image" data-index="9" class="fade-in">
-            <img src="gallery/IMG11.JPG" alt="image" data-index="10" class="fade-in">
-            <img src="gallery/IMG12.JPG" alt="image" data-index="11" class="fade-in">
-            <img src="gallery/IMG13.JPG" alt="image" data-index="12" class="fade-in">
-            <img src="gallery/IMG14.JPG" alt="image" data-index="13" class="fade-in">
+            <img src="gallery/thumbs/IMG1.jpg" data-full="gallery/full/IMG1.jpg" alt="image" data-index="0" class="fade-in" loading="lazy">
+            <img src="gallery/thumbs/IMG2.jpg" data-full="gallery/full/IMG2.jpg" alt="image" data-index="1" class="fade-in" loading="lazy">
+            <img src="gallery/thumbs/IMG3.jpg" data-full="gallery/full/IMG3.jpg" alt="image" data-index="2" class="fade-in" loading="lazy">
+            <img src="gallery/thumbs/IMG4.jpg" data-full="gallery/full/IMG4.jpg" alt="image" data-index="3" class="fade-in" loading="lazy">
+            <img src="gallery/thumbs/IMG5.jpg" data-full="gallery/full/IMG5.jpg" alt="image" data-index="4" class="fade-in" loading="lazy">
+            <img src="gallery/thumbs/IMG6.jpg" data-full="gallery/full/IMG6.jpg" alt="image" data-index="5" class="fade-in" loading="lazy">
+            <img src="gallery/thumbs/IMG7.jpg" data-full="gallery/full/IMG7.jpg" alt="image" data-index="6" class="fade-in" loading="lazy">
+            <img src="gallery/thumbs/IMG8.jpg" data-full="gallery/full/IMG8.jpg" alt="image" data-index="7" class="fade-in" loading="lazy">
+            <img src="gallery/thumbs/IMG9.jpg" data-full="gallery/full/IMG9.jpg" alt="image" data-index="8" class="fade-in" loading="lazy">
+            <img src="gallery/thumbs/IMG10.jpg" data-full="gallery/full/IMG10.jpg" alt="image" data-index="9" class="fade-in" loading="lazy">
+            <img src="gallery/thumbs/IMG11.jpg" data-full="gallery/full/IMG11.jpg" alt="image" data-index="10" class="fade-in" loading="lazy">
+            <img src="gallery/thumbs/IMG12.jpg" data-full="gallery/full/IMG12.jpg" alt="image" data-index="11" class="fade-in" loading="lazy">
+            <img src="gallery/thumbs/IMG13.jpg" data-full="gallery/full/IMG13.jpg" alt="image" data-index="12" class="fade-in" loading="lazy">
+            <img src="gallery/thumbs/IMG14.jpg" data-full="gallery/full/IMG14.jpg" alt="image" data-index="13" class="fade-in" loading="lazy">
         </section>
 
         <footer>
@@ -117,10 +119,22 @@
 
         <div id="lightbox">
             <button id="lb-close" aria-label="Close">&#x2715;</button>
-            <button id="lb-prev" class="lb-arrow" aria-label="Previous">&#8592;</button>
-            <img id="lb-img" src="" alt="" />
-            <button id="lb-next" class="lb-arrow" aria-label="Next">&#8594;</button>
-            <div id="lb-counter"></div>
+            <div class="lb-stage">
+                <img id="lb-img" src="" alt="" />
+            </div>
+            <div class="lb-controls">
+                <button id="lb-prev" class="lb-arrow" aria-label="Previous">
+                    <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="15 18 9 12 15 6"></polyline>
+                    </svg>
+                </button>
+                <div id="lb-counter"></div>
+                <button id="lb-next" class="lb-arrow" aria-label="Next">
+                    <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </button>
+            </div>
         </div>
 
     </div>

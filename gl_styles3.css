@@ -6,210 +6,79 @@
     Date: 2/11/2026
 
     Filename: gl_styles3.css
+    Shared rules (reset, nav, logo, footer, language toggle, animations)
+    live in gl_base.css — this file only holds details-page-specific styling.
 */
 
 /* Font Styles */
 .corinthia-regular {
-  font-family: "Corinthia", cursive;
-  font-weight: 400;
-  font-style: normal;
+    font-family: var(--font-script);
+    font-weight: 400;
+    font-style: normal;
 }
 
 .corinthia-bold {
-  font-family: "Corinthia", cursive;
-  font-weight: 700;
-  font-style: normal;
+    font-family: var(--font-script);
+    font-weight: 700;
+    font-style: normal;
 }
 
-.inter-regular {
-  font-family: "Inter", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-}
-
-/* Fade-in Animation on Scroll*/
-.fade-in {
+/* Slide-in groupings specific to this page */
+.info {
     opacity: 0;
-    transform: translateY(50px);
-    transition: opacity 1.3s ease, transform 1.3s ease;
-}
-
-.fade-in.show {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Slide-in Animation */
-.english {
-    opacity: 0;
-    transform: translateX(-50px);
-    animation: slideIn 1.3s ease forwards;
-}
-
-.spanish {
-    opacity: 0;
-    transform: translateX(50px);
-    animation: slideIn 1.3s ease forwards;
-}
-
-.logo {
-    opacity: 0;
-    transform: translateY(-50px);
-    animation: slideIn 1.3s ease forwards;
-}
-
-.info, .navigation {
-    opacity: 0;
-    transform: translateX(50px);
-    animation: slideIn 1.3s ease forwards;
+    transform: translateX(40px);
+    animation: slideIn 1.1s ease forwards;
 }
 
 .title, .location {
     opacity: 0;
-    transform: translateX(-50px);
-    animation: slideIn 1.3s ease forwards;
+    transform: translateX(-40px);
+    animation: slideIn 1.1s ease forwards;
 }
 
-
-@keyframes slideIn {
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-
-/* HTML & Body Styles */
-
-.mobile-wrapper {
-    max-width: 500px;
-    min-width: 320px;
-    width: 100%;
-    margin: 0 auto;
-    background: white;
-    min-height: 100vh;
-    overflow-x: hidden;
-    font-family: "Inter", sans-serif;
-}
-
-html {
-    background-color: #e5f3fc;
-}
-
-body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-}
-
-h1, h2 {
-    text-decoration: underline #e5f3fc;
-}
-
-
-/* Language Button Styles*/
-.es {
-  display: none;
-}
-
-.language-toggle {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin: 0;
-    padding: 10px 10px;
-    justify-content: space-between;
-}
-
-.language-toggle button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 1.5rem;
-}
-
-.language-toggle .active {
-  background-color: #e5f3fc;
-  font-weight: bold;
-  border-radius: 10px;
-  padding: 5px;
-}
-
-/* Logo Styles */
-.logo {
-    max-width: 100%;
-    margin: 0;
-    padding: 0;
-}
-
-.logo img{
-    display: block;
-    max-width: 60%;
-    margin: 0 auto;
-}
-
-
-/* Navigation Menu Styles*/
-.navigation {
-    max-width: 100%;
-    margin-bottom: 30px ;
-}
-
-.navigation ul {
-    display: flex;
-    flex-wrap: wrap;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    gap: 10px;
-    justify-content: center;
-}
-
-.navigation a {
-    text-decoration: none;
-    display: block;
-    padding: 6px 10px;
-    color: black;
-    font-weight: 400;
-    font-size: 1.4rem;
-    margin: 5px 0;
-    background-color: #e5f3fc;
-    border-radius: 5px;
-}
-
-.navigation a:active {
-    background-color: #cfedff;
-}
-
-
-/*Title Styles*/
+/* Title Styles */
 .title {
     text-align: center;
-    font-size: 1.8rem;
+    padding: 0 10px;
+}
+
+.title h1 {
+    font-size: 1.9rem;
 }
 
 .title p {
-    font-size: 1.3rem;
-    padding: 0 30px;
+    font-size: 1.05rem;
+    padding: 0 26px;
+    margin-top: 10px;
 }
 
-h2 {
-    margin-bottom: 5px;
+.title cite {
+    font-style: normal;
+    color: var(--color-ink);
+    font-weight: 600;
 }
 
-/* Information Styles */
+/* Information Card Styles */
 .info, .location, .add-info {
-    margin: 0 auto;
-    width: 90%;
+    margin: 0 auto 34px;
+    width: 88%;
     text-align: center;
-    margin-bottom: 50px;
-    font-size: 1.2rem;
-    border-top: 3px solid #e5f3fc;
+    padding: 22px 20px;
+    background-color: var(--color-surface);
+    border: var(--card-border);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-soft);
 }
 
-p {
-    line-height: 1.6rem;
+.info h2, .location h2, .add-info h2 {
+    margin: 0 0 10px;
+    font-size: 1.3rem;
+}
+
+.info p, .location p, .add-info p {
+    margin: 0;
+    font-size: 1.05rem;
+    line-height: 1.7rem;
 }
 
 /* Venue Styles */
@@ -217,42 +86,18 @@ p {
     display: flex;
     align-items: end;
     justify-content: center;
-    margin: 0 auto;
-    background-image: url(gallery/villa.png);
+    margin: 0 auto 40px;
+    background-image:
+        linear-gradient(to top, rgba(20, 30, 40, 0.55), rgba(20, 30, 40, 0) 55%),
+        url(gallery/villa.png);
     background-position: center;
     background-size: cover;
-    width: 90%;
+    width: 88%;
     height: 17rem;
-    border-radius: 10px;
-    margin-bottom: 50px;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-soft);
 }
 
-.button {
-    padding: 1rem;
-    background-color: #e5f3fc;
-    box-shadow: inset -2px -2px 6px #cfedff,
-        inset 2px 2px 6px white,
-        2px 2px 2px rgb(192, 192, 192);
-    color: rgb(0, 0, 0);
-    font-size: 1.3rem;
-    margin-bottom: 15px;
-    border-radius: 10px;
-    text-decoration: none;
-}
-
-
-
-
-/* Footer Styles */
-footer {
-    text-align: center;
-    background-color: #e5f3fc;
-    padding: 10px 0;
-    border-radius: 20px 20px 0 0;
-}
-
-@media (max-width: 400px) {
-    .navigation a {
-        font-size: 1.2rem;
-    }
+.venue .button {
+    margin-bottom: 22px;
 }

@@ -6,274 +6,103 @@
     Date: 2/11/2026
 
     Filename: gl_styles5.css
+    Shared rules (reset, nav, logo, footer, language toggle, animations)
+    live in gl_base.css — this file only holds hotel-page-specific styling.
 */
 
 /* Font Styles */
 .corinthia-regular {
-  font-family: "Corinthia", cursive;
-  font-weight: 400;
-  font-style: normal;
+    font-family: var(--font-script);
+    font-weight: 400;
+    font-style: normal;
 }
 
 .corinthia-bold {
-  font-family: "Corinthia", cursive;
-  font-weight: 700;
-  font-style: normal;
+    font-family: var(--font-script);
+    font-weight: 700;
+    font-style: normal;
 }
 
-.inter-regular {
-  font-family: "Inter", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-}
-
-
-/* Fade-in Animation on Scroll */
-.fade-in {
+/* Slide-in groupings specific to this page */
+.intro {
     opacity: 0;
-    transform: translateY(40px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
-    will-change: opacity, transform;
-}
-
-.fade-in.show {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Slide-in Animation */
-.english {
-    opacity: 0;
-    transform: translateX(-50px);
-    animation: slideIn 1.3s ease forwards;
-}
-
-.spanish {
-    opacity: 0;
-    transform: translateX(50px);
-    animation: slideIn 1.3s ease forwards;
-}
-
-.logo {
-    max-width: 100%;
-    margin: 0;
-    padding: 0;
-    opacity: 0;
-    transform: translateY(-50px);
-    animation: slideIn 1.3s ease forwards;
-}
-
-.intro, .navigation {
-    opacity: 0;
-    transform: translateX(50px);
-    animation: slideIn 1.3s ease forwards;
+    transform: translateX(40px);
+    animation: slideIn 1.1s ease forwards;
 }
 
 .title, .sub-title {
     opacity: 0;
-    transform: translateX(-50px);
-    animation: slideIn 1.3s ease forwards;
+    transform: translateX(-40px);
+    animation: slideIn 1.1s ease forwards;
 }
 
 .marriott {
     opacity: 0;
-    transform: translateY(50px);
-    animation: slideIn 1.3s ease forwards;
-}
-
-
-@keyframes slideIn {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-        transform: translate(0, 0);
-    }
-}
-
-
-/* HTML & Body Styles */
-
-.mobile-wrapper {
-    max-width: 500px;
-    min-width: 320px;
-    width: 100%;
-    margin: 0 auto;
-    background: white;
-    min-height: 100vh;
-}
-
-html {
-    background-color: #e5f3fc;
-}
-
-body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-}
-
-html, body {
-    overflow-x: hidden;
-}
-
-
-/* Language Button Styles*/
-.es {
-  display: none;
-}
-
-.language-toggle {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin: 0;
-    padding: 10px 10px;
-    justify-content: space-between;
-}
-
-.language-toggle button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 1.5rem;
-}
-
-.language-toggle .active {
-  background-color: #e5f3fc;
-  font-weight: bold;
-  border-radius: 10px;
-  padding: 5px;
-}
-
-/* Logo Styles */
-.logo img{
-    display: block;
-    max-width: 60%;
-    margin: 0 auto;
+    transform: translateY(40px);
+    animation: slideIn 1.1s ease forwards;
 }
 
 img {
     display: block;
 }
 
-
-/* Navigation Menu Styles*/
-.navigation {
-    max-width: 100%;
-    margin-bottom: 30px ;
-}
-
-.navigation ul {
-    display: flex;
-    flex-wrap: wrap;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    gap: 10px;
-    justify-content: center;
-}
-
-.navigation a {
-    text-decoration: none;
-    display: block;
-    padding: 6px 10px;
-    color: black;
-    font-family: "Inter", sans-serif;
-    font-weight: 400;
-    font-size: 1.4rem;
-    margin: 5px 0;
-    background-color: #e5f3fc;
-    border-radius: 5px;
-}
-
-.navigation a:active {
-    background-color: #cfedff;
-}
-
 /* Main Styles */
 .main {
-    width: 80%;
+    width: 88%;
     margin: 0 auto;
-    box-sizing: border-box;
-    font-family: "Inter", sans-serif;
     text-align: center;
 }
-
 
 /* Title Styles */
 .title {
     text-align: center;
-    font-size: 1.8rem;
-    font-family: "Inter", sans-serif;
+    padding: 0 10px;
 }
 
-h1, h2 {
-    text-decoration: underline #e5f3fc;
+.title h1 {
+    font-size: 1.9rem;
 }
 
 .intro {
-    font-size: 1.2rem;
-    line-height: 2rem;
+    font-size: 1.05rem;
+    line-height: 1.8rem;
+    color: var(--color-ink-soft);
 }
 
-/* Hotel Styles */
-.hotels h2 {
-    font-size: 2rem;
-}
-
-.hotels h3 {
-    font-size: 1.5rem;
-    text-shadow: 2px 2px #cfedff;
+/* Hotel Cards */
+.sub-title {
+    font-size: 1.35rem;
+    font-weight: 500;
+    margin: 34px 0 22px;
 }
 
 .marriott, .avid {
     display: flex;
     flex-direction: column;
-    padding-bottom: 30px;
+    align-items: center;
+    gap: 14px;
+    padding: 20px;
+    margin-bottom: 26px;
+    background-color: var(--color-surface);
+    border: var(--card-border);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-soft);
+}
+
+.marriott h3, .avid h3 {
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin: 0;
 }
 
 .hotel1, .hotel2 {
     width: 100%;
-    border-radius: 5px;
-    will-change: transform;
-}
-
-.button {
-    width: 50%;
-    margin: 0 auto;
-    text-decoration: none;
-    color: black;
-    font-size: 1.3rem;
-    background-color: #e5f3fc;
-    margin-top: 10px;
-    padding: 10px;
-    border-radius: 10px;
-    box-shadow: inset -2px -2px 6px #cfedff,
-        inset 2px 2px 6px white,
-        2px 2px 2px rgb(192, 192, 192);
+    border-radius: var(--radius-sm);
 }
 
 .add-info {
-    font-size: 1.2rem;
-    line-height: 1.6rem;
-    padding-bottom: 30px;
-}
-
-/* Footer Styles */
-footer {
-    text-align: center;
-    background-color: #e5f3fc;
-    padding: 10px 0;
-    font-family: "Inter", sans-serif;
-    border-radius: 20px 20px 0 0;
-}
-
-@media (max-width: 400px) {
-    .navigation a {
-        font-size: 1.2rem;
-    }
+    font-size: 1.05rem;
+    line-height: 1.7rem;
+    color: var(--color-ink-soft);
+    padding-bottom: 20px;
 }
