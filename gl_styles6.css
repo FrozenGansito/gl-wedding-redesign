@@ -164,7 +164,6 @@
 /* Arrow Buttons */
 .lb-arrow {
     z-index: 2;
-    font-size: 3rem;
     color: #fff;
     background: rgba(211, 211, 211, 0.35);
     border: none;
@@ -172,7 +171,6 @@
     width: 70px;
     height: 60px;
     padding: 0;
-    line-height: 1;
     cursor: pointer;
     display: flex;
     align-items: center;
